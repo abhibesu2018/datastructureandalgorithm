@@ -1,23 +1,22 @@
 package com.abhi.algo.sort;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class InsertionSort implements InterfaceSort {
 
 	@Override
-	public ArrayList<Integer> sort(ArrayList<Integer> arr) {
+	public List<Integer> sort(List<Integer> arr) {
 
-		ArrayList<Integer> result = new ArrayList<>();
 		int length = arr.size();
 		if (length == 0) {
 			System.out.println("The array is already sorted!!");
 		}
 		int index = 1;
-		result = insertionSort(arr,index);
+		List<Integer> result = insertionSort(arr,index);
 		return result;
 	}
 
-	private ArrayList<Integer> insertionSort(ArrayList<Integer> subArr, int index) {
+	private List<Integer> insertionSort(List<Integer> subArr, int index) {
 		System.err.println("intermediate result: "+subArr);
 		System.err.println("intermediate index: "+index);
 		

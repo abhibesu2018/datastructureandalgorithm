@@ -1,9 +1,10 @@
 package com.abhi.algo.sort;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface InterfaceSort {
 	
-	public ArrayList<Integer> sort(ArrayList<Integer> arr);
+	public List<Integer> sort(List<Integer> arr);
 	
 }
