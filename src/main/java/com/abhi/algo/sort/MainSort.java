@@ -9,7 +9,7 @@ public class MainSort {
 		ArrayList<Integer> arr = new ArrayList<Integer>();
 		arr.addAll(Arrays.asList(9, 8, 5, 6, 3, 9));
 		System.err.println("Unsorted array is: "+arr);
-		InterfaceSort interfaceSort = new SelectionSort();
+		InterfaceSort interfaceSort = new InsertionSort();
 		interfaceSort.sort(arr);
 		System.out.println(arr);
 	}
