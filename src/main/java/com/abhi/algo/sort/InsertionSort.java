@@ -2,12 +2,51 @@ package com.abhi.algo.sort;
 
 import java.util.ArrayList;
 
-public class InsertionSort implements InterfaceSort{
+public class InsertionSort implements InterfaceSort {
 
 	@Override
 	public ArrayList<Integer> sort(ArrayList<Integer> arr) {
-		// TODO Auto-generated method stub
-		return null;
+
+		ArrayList<Integer> result = new ArrayList<>();
+		int length = arr.size();
+		if (length == 0) {
+			System.out.println("The array is already sorted!!");
+		}
+		int index = 1;
+		result = insertionSort(arr,index);
+		return result;
 	}
 
+	private ArrayList<Integer> insertionSort(ArrayList<Integer> subArr, int index) {
+		System.err.println("intermediate result: "+subArr);
+		System.err.println("intermediate index: "+index);
+		
+		//get the key element need to insert
+		int key = subArr.get(index);
+		System.err.println(key);
+		
+		//number of element to check in the array
+		int numberOfElementToCheck = index -1;
+		
+		//Now search the position of the key in the already sorted array
+		//Check key is less than the last element in the array and so on.
+		//
+		while(numberOfElementToCheck>=0 && key<subArr.get(numberOfElementToCheck)) {
+			//Set the values of number of element check and key
+			subArr.set(numberOfElementToCheck+1, subArr.get(numberOfElementToCheck));
+			subArr.set(numberOfElementToCheck, key);
+			
+			//Decrease the number of element
+			numberOfElementToCheck--;
+		}
+		
+		//Increment the index for the recursion call
+		if(index<subArr.size()-1) {
+			index++;
+			insertionSort(subArr, index);
+		}
+		
+		return subArr;
+	}
+	
 }
