@@ -12,7 +12,13 @@ public class LinkedListImpl {
 		public Node(int data) {
 			this.data = data;
 		}
-
+		
+		//TODO implement it
+		private static Node insertNode(Node head, int data) {
+			Node newNode = new Node(data);
+			newNode.next = null;
+			return newNode;
+		}
 		private static Node insertNodeFirst(Node node, int data) {
 			Node newNode = new Node(data);
 			newNode.next = node;
